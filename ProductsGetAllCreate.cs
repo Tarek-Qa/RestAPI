@@ -35,9 +35,23 @@ namespace RestAPI
             return new OkObjectResult(products);
         }
 
-        [FunctionName("CreateProduct")]
 
-        
+        /// <summary>
+        /// Creates a new product.
+        /// </summary>
+        /// <param name="req">The HTTP request containing product data.</param>
+        /// <returns>The created product.</returns>
+        /// <example>
+        /// POST /api/products
+        /// Body:
+        /// {
+        ///     "name": "Product Name",
+        ///     "price": 100.0,
+        ///     "description": "Product Description",
+        ///     "category": "Product Category"
+        /// }
+        /// </example>
+        [FunctionName("CreateProduct")]
         public async Task<IActionResult> CreateProduct(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = "products")] HttpRequest req, ILogger log)
         {
