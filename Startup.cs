@@ -20,8 +20,7 @@ namespace RestAPI
         {
             var KeyVaultUrl = new Uri(Environment.GetEnvironmentVariable("KeyVaultUrl"));
             var secretClient = new SecretClient(KeyVaultUrl, new DefaultAzureCredential());
-            var getAIResponseKey = secretClient.GetSecret("FunctionKey-GetAIResponse").Value.Value;
-            var createProductKey = secretClient.GetSecret("FunctionKey-CreateProduct").Value.Value;
+           
             var cs = secretClient.GetSecret("sql").Value.Value;
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(cs));
 
