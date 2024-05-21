@@ -9,9 +9,9 @@ This RESTful API Function App, deployed on Azure, includes a total of 6 function
 ### 1. GetAIResponse
 - **Description**: This is a GET function with `AuthorizationLevel.Anonymous` that allows users to interact with OpenAI. You can try it out and chat with the AI by using Postman or directly accessing the endpoint.
 - **Usage**:
-  - **Postman**: Use the following link, replacing `{promot}` with your question:
+  - **Postman**: Use the following link, replacing `{prompt}` with your question:
     ```
-    https://tq-restapi-fa.azurewebsites.net/api/chat/{promot}
+    https://tq-restapi-fa.azurewebsites.net/api/chat/{prompt}
     ```
   - **Swagger UI**: If you don't have Postman, you can use Swagger UI to interact with the API:
     ```
